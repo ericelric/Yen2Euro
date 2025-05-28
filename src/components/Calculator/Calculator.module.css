@@ -7,19 +7,19 @@
   grid-template-rows: minmax(16rem, max-content) 1fr;
   height: 100%;
   max-height: 100vh;
-  max-width: 450px;
+  max-width: 28rem;
   padding: 0.5rem;
   width: 100%;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 28rem) {
   .calculator__wrapper {
     grid-template-rows: minmax(18rem, max-content) 1fr;
   }
 }
 
-@media (min-height: 750px) and (max-width: 449px) and (orientation: portrait),
-  (min-width: 450px) and (min-height: 850px) {
+@media (min-height: 74rem) and (max-width: 28rem) and (orientation: portrait),
+  (min-width: 28rem) and (min-height: 53rem) {
   .calculator__wrapper {
     height: auto;
   }

@@ -36,8 +36,8 @@
   grid-column: span 2;
 }
 
-@media (min-height: 750px) and (max-width: 449px) and (orientation: portrait),
-  (min-width: 450px) and (min-height: 850px) {
+@media (min-height: 74rem) and (max-width: 28rem) and (orientation: portrait),
+  (min-width: 28rem) and (min-height: 53rem) {
   .button {
     aspect-ratio: 1;
   }
