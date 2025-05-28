@@ -1,5 +1,5 @@
 <div align="center" dir="auto">
-   <a href="#" rel="nofollow"><img width="200" alt="logo" src="#"></a><br>
+   <a href="#" rel="nofollow"><img width="200" alt="logo" src="https://github.com/user-attachments/assets/df932b7e-a791-412b-9bd0-7e35a1bf698f"></a><br>
 </div>
 
 <h1 align="center">Euro2Yen - Calculate & Convert Seamlessly</h1>
@@ -11,7 +11,7 @@
 ## **Features**
 
 - **Live Currency Conversion**: Converts input values using mock exchange rates
-- **Basic Calculator**: Supports standard arithmetic operations (+ - * ÷)
+- **Basic Calculator**: Supports standard arithmetic operations
 - **Currency Switch Button**: Swap currencies with a single click
 
 ## **Tech Stack**
