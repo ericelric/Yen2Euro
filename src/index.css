@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+
+:root {
+  --background: #6a7c95;
+  --grey-primary: #3a4452;
+  --grey-secondary: #2e3742;
+  --black: #111;
+  --white: #fff;
+  --white-transparent: rgba(255, 255, 255, 0.75);
+  --green: #33ffd8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  font-family: "Oxanium", sans-serif;
+}
+
+#root {
+  align-items: center;
+  display: flex;
+  height: 100dvh;
+  justify-content: center;
+  padding: 0.5rem;
+}

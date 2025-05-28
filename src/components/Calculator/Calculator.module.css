@@ -1,0 +1,21 @@
+.calculator__wrapper {
+  background-color: var(--grey-primary);
+  border: 5px solid var(--grey-secondary);
+  border-radius: 1rem;
+  container-type: inline-size;
+  display: grid;
+  max-width: 500px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.calculator__buttons {
+  background: var(--grey-primary);
+  display: grid;
+  gap: 2cqi;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 1cqi;
+}
