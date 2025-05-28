@@ -26,8 +26,8 @@
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/ericelric/Euro2Yen.git
-   cd Euro2Yen
+   git clone git@github.com:ericelric/Yen2Euro.git
+   cd Yen2Euro
    ```
 
 2. Install dependencies:
