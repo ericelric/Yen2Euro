@@ -1,7 +1,6 @@
 .button {
   cursor: pointer;
   font-family: "Oxanium", sans-serif;
-  aspect-ratio: 1;
   font-size: clamp(1rem, 5cqi, 2rem);
   outline: none;
   color: var(--white);
@@ -9,6 +8,7 @@
   border: 0;
   border-radius: 0.75rem;
   box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 3px 4px 2px rgba(0, 0, 0, 0.2);
+  min-height: 3.5rem;
   transition: all 0s ease-in-out;
   -webkit-tap-highlight-color: transparent;
 }
@@ -34,5 +34,15 @@
 
 .button--double {
   grid-column: span 2;
-  aspect-ratio: unset;
+}
+
+@media (min-height: 750px) and (orientation: portrait),
+  (min-width: 450px) and (min-height: 850px) and (orientation: landscape) {
+  .button {
+    aspect-ratio: 1;
+  }
+
+  .button--double {
+    aspect-ratio: unset;
+  }
 }
