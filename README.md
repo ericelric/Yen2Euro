@@ -2,7 +2,7 @@
    <a href="#" rel="nofollow"><img width="200" alt="logo" src="#"></a><br>
 </div>
 
-<h1 align="center">Euro2Yen – Calculate & Convert Seamlessly</h1>
+<h1 align="center">Euro2Yen - Calculate & Convert Seamlessly</h1>
 
 **CurrencyCalculator** is a sleek calculator app with built-in currency conversion. Perform arithmetic operations while instantly converting values between currencies.
 
@@ -26,8 +26,8 @@
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/ericelric/currencycalculator.git
-   cd currencycalculator
+   git clone https://github.com/ericelric/Euro2Yen.git
+   cd Euro2Yen
    ```
 
 2. Install dependencies:
@@ -57,5 +57,5 @@
 
 ---
 
-Euro2Yen – Calculate & Convert Seamlessly<br>
+Euro2Yen - Calculate & Convert Seamlessly<br>
 Licensed under the MIT License. See LICENSE file for details.
