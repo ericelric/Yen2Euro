@@ -18,8 +18,8 @@
   }
 }
 
-@media (min-height: 750px) and (orientation: portrait),
-  (min-width: 450px) and (min-height: 850px) and (orientation: landscape) {
+@media (min-height: 750px) and (max-width: 449px) and (orientation: portrait),
+  (min-width: 450px) and (min-height: 850px) {
   .calculator__wrapper {
     height: auto;
   }
