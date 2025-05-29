@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import type { ExchangeRates, ExchangeRatesResponse } from "../types/ExchangeRates";
+import { LOCAL_STORAGE_KEYS } from "../constants/storageKeys";
 
-const STORAGE_KEY = "exchange_rates";
 const SIX_HOURS = 6 * 60 * 60;
 
 export function useExchangeRates() {
@@ -14,7 +14,7 @@ export function useExchangeRates() {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const cachedResponse = localStorage.getItem(STORAGE_KEY);
+        const cachedResponse = localStorage.getItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES);
 
         if (cachedResponse) {
           const parsedResponse = JSON.parse(cachedResponse) as ExchangeRatesResponse;
@@ -40,7 +40,7 @@ export function useExchangeRates() {
         );
         setRates(response.data.rates);
         setTimestamp(response.data.timestamp);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(response.data));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES, JSON.stringify(response.data));
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
