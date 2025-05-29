@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import type { ExchangeRates } from "../types/Currency";
+import type { ExchangeRates } from "../types/ExchangeRates";
 import type { ArithmeticOperator } from "../types/Calculator";
 
 export const useCurrencyConverter = (rates: ExchangeRates, operation: ArithmeticOperator) => {

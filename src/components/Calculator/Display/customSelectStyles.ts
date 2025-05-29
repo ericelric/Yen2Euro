@@ -1,5 +1,5 @@
 import type { StylesConfig } from "react-select";
-import type { CurrencyOption } from "../../../types/Currency";
+import type { CurrencyOption } from "../../../types/ExchangeRates";
 
 export const customSelectStyles: StylesConfig<CurrencyOption, false> = {
   control: (base, state) => ({

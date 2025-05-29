@@ -5,6 +5,7 @@
   display: grid;
   gap: 1rem;
   padding: 1rem;
+  position: relative;
 }
 
 .display__currency-grid {
@@ -78,4 +79,12 @@
 
 .display__error {
   color: var(--red);
+}
+
+.timestamp {
+  color: var(--grey-primary);
+  font-size: 0.75rem;
+  left: 1rem;
+  position: absolute;
+  top: 0.125rem;
 }

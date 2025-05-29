@@ -7,7 +7,7 @@ import { useExchangeRates } from "../../../hooks/useExchangeRates";
 import { useCurrencyConverter } from "../../../hooks/useCurrencyConverter";
 import { options } from "../../../data/currencyOptions";
 import type { ArithmeticOperator } from "../../../types/Calculator";
-import type { CurrencyOption } from "../../../types/Currency";
+import type { CurrencyOption } from "../../../types/ExchangeRates";
 
 type DisplayProps = {
   currentOperand: string;
@@ -16,7 +16,7 @@ type DisplayProps = {
 };
 
 const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
-  const { rates, loading, error } = useExchangeRates();
+  const { rates, timestamp, loading, error } = useExchangeRates();
   const { convertAndFormatAmount } = useCurrencyConverter(rates, operation);
 
   const [fromCurrency, setFromCurrency] = useState<CurrencyOption>({
@@ -38,6 +38,18 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
+
+  const formattedTimestamp =
+    timestamp != null
+      ? new Date(timestamp * 1000).toLocaleString("de-DE", {
+          year: "2-digit",
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: false,
+        })
+      : "N/A";
 
   return (
     <div className={styles["display"]}>
@@ -80,6 +92,7 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
           </span>
         )}
       </div>
+      <div className={styles.timestamp}>{`Rates as of: ${formattedTimestamp}`}</div>
     </div>
   );
 };
