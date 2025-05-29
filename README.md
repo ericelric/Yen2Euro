@@ -2,7 +2,7 @@
    <a href="#" rel="nofollow"><img width="200" alt="logo" src="https://github.com/user-attachments/assets/df932b7e-a791-412b-9bd0-7e35a1bf698f"></a><br>
 </div>
 
-<h1 align="center">¥en2€uro - Calculate & Convert Seamlessly</h1>
+<h1 align="center">¥en2€uro - Convert Currencies Seamlessly</h1>
 
 **CurrencyCalculator** is a sleek calculator app with built-in currency conversion. Perform arithmetic operations while instantly converting values between currencies.
 
@@ -57,5 +57,5 @@
 
 ---
 
-¥en2€uro - Calculate & Convert Seamlessly<br>
+¥en2€uro - Convert Currencies Seamlessly<br>
 Licensed under the MIT License. See LICENSE file for details.
