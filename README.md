@@ -1,5 +1,5 @@
 <div align="center" dir="auto">
-   <a href="#" rel="nofollow"><img width="200" alt="logo" src="https://github.com/user-attachments/assets/df932b7e-a791-412b-9bd0-7e35a1bf698f"></a><br>
+   <a href="#" rel="nofollow"><img width="200" alt="logo" src="https://github.com/user-attachments/assets/f66f19d4-7fa3-4b79-a767-b2ce0c74866d"></a><br>
 </div>
 
 <h1 align="center">¥en2€uro - Convert Currencies Seamlessly</h1>
