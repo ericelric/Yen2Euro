@@ -4,13 +4,14 @@
 
 <h1 align="center">¥en2€uro - Convert Currencies Seamlessly</h1>
 
-**CurrencyCalculator** is a sleek calculator app with built-in currency conversion. Perform arithmetic operations while instantly converting values between currencies.
+**¥en2€uro** is a sleek calculator app with built-in currency conversion. Perform arithmetic operations while instantly converting values between currencies.
 
 🚀 **Live Demo:** [¥en2€uro](https://yen2euro.vercel.app/)
 
 ## **Features**
 
-- **Live Currency Conversion**: Converts input values using mock exchange rates
+- **Live Currency Conversion**: Uses up-to-date exchange rates from [openexchangerates.org](https://openexchangerates.org/)
+- **Persistent Settings**: Remembers your selected currencies across sessions via localStorage
 - **Basic Calculator**: Supports standard arithmetic operations
 - **Currency Switch Button**: Swap currencies with a single click
 
@@ -19,7 +20,8 @@
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - [React Select](https://react-select.com/)
-- Custom CSS with BEM methodology
+- [Open Exchange Rates API](https://openexchangerates.org/)
+- [Custom CSS with BEM methodology](https://en.bem.info/methodology/)
 
 ## **Getting Started**
 
@@ -36,7 +38,13 @@
    npm install
    ```
 
-3. Start the development server:
+3. Create a .env file and add your Open Exchange Rates API key:
+
+   ```sh
+   VITE_EXCHANGE_RATES_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
 
    ```sh
    npm run dev
@@ -51,6 +59,9 @@
 3. View the result in your target currency in real-time.
 
 4. Use the swap button to quickly reverse conversion direction.
+
+5. The app stores your last-used currencies and only refetches rates if older than 6 hours.
+
 
 ## **Screenshot**
 
