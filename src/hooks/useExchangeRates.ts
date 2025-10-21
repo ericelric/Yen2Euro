@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import type { AxiosResponse } from "axios";
 import type { ExchangeRates, ExchangeRatesResponse } from "../types/ExchangeRates";
 import { LOCAL_STORAGE_KEYS } from "../constants/storageKeys";
 
@@ -30,14 +31,20 @@ export function useExchangeRates() {
           }
         }
 
-        const response = await axios.get<ExchangeRatesResponse>(
-          "https://openexchangerates.org/api/latest.json",
-          {
-            params: {
-              app_id: import.meta.env.VITE_OPEN_EXCHANGE_RATES_KEY,
-            },
-          }
-        );
+        let response: AxiosResponse<ExchangeRatesResponse>;
+
+        if (import.meta.env.DEV) {
+          response = await axios.get<ExchangeRatesResponse>("/mockData.json");
+        } else {
+          response = await axios.get<ExchangeRatesResponse>(
+            "https://openexchangerates.org/api/latest.json",
+            {
+              params: {
+                app_id: import.meta.env.VITE_OPEN_EXCHANGE_RATES_KEY,
+              },
+            }
+          );
+        }
         setRates(response.data.rates);
         setTimestamp(response.data.timestamp);
         localStorage.setItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES, JSON.stringify(response.data));
