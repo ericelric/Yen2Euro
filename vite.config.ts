@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: '¥en2€uro Currency Converter',
         short_name: 'Yen2Euro',
-        description: 'A sleek calculator app with real-time currency conversion. Supports basic arithmetic operations and live exchange rate conversions.',
+        description: '¥en2€uro is a sleek calculator app with built-in currency conversion. Perform arithmetic operations while instantly converting values between currencies.',
         theme_color: '#3a4452',
         background_color: '#3a4452',
         display: 'standalone',
