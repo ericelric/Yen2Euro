@@ -83,8 +83,16 @@
 
 .timestamp {
   color: var(--grey-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.75rem;
   left: 1rem;
   position: absolute;
   top: 0.125rem;
+}
+
+.status-indicator {
+  color: var(--white-transparent);
+  font-size: 0.7rem;
 }

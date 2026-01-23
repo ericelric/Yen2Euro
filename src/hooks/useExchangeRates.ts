@@ -11,26 +11,54 @@ export function useExchangeRates() {
   const [timestamp, setTimestamp] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<null | string>(null);
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
+  const [isUsingCachedData, setIsUsingCachedData] = useState(false);
+
+  // Listen for online/offline status changes
+  useEffect(() => {
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchRates = async () => {
-      try {
-        const cachedResponse = localStorage.getItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES);
+      const cachedResponse = localStorage.getItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES);
+      let cachedData: ExchangeRatesResponse | null = null;
 
-        if (cachedResponse) {
-          const parsedResponse = JSON.parse(cachedResponse) as ExchangeRatesResponse;
-          const currentTimeInSeconds = Math.floor(Date.now() / 1000);
+      if (cachedResponse) {
+        cachedData = JSON.parse(cachedResponse) as ExchangeRatesResponse;
+        const currentTimeInSeconds = Math.floor(Date.now() / 1000);
+        const age = currentTimeInSeconds - cachedData.timestamp;
 
-          const age = currentTimeInSeconds - parsedResponse.timestamp;
-
-          if (age < SIX_HOURS) {
-            setRates(parsedResponse.rates);
-            setTimestamp(parsedResponse.timestamp);
-            setLoading(false);
-            return;
-          }
+        // If cached data is fresh, use it
+        if (age < SIX_HOURS) {
+          setRates(cachedData.rates);
+          setTimestamp(cachedData.timestamp);
+          setIsUsingCachedData(false);
+          setLoading(false);
+          return;
         }
+      }
 
+      // If offline and we have cached data (even if stale), use it
+      if (!navigator.onLine && cachedData) {
+        setRates(cachedData.rates);
+        setTimestamp(cachedData.timestamp);
+        setIsUsingCachedData(true);
+        setLoading(false);
+        return;
+      }
+
+      // Try to fetch fresh data
+      try {
         let response: AxiosResponse<ExchangeRatesResponse>;
 
         if (import.meta.env.DEV) {
@@ -47,12 +75,20 @@ export function useExchangeRates() {
         }
         setRates(response.data.rates);
         setTimestamp(response.data.timestamp);
+        setIsUsingCachedData(false);
         localStorage.setItem(LOCAL_STORAGE_KEYS.EXCHANGE_RATES, JSON.stringify(response.data));
       } catch (error) {
-        if (error instanceof Error) {
-          setError(error.message);
+        // If fetch fails but we have cached data (even if stale), use it
+        if (cachedData) {
+          setRates(cachedData.rates);
+          setTimestamp(cachedData.timestamp);
+          setIsUsingCachedData(true);
         } else {
-          setError("An unknown error occurred.");
+          if (error instanceof Error) {
+            setError(error.message);
+          } else {
+            setError("An unknown error occurred.");
+          }
         }
       } finally {
         setLoading(false);
@@ -61,5 +97,5 @@ export function useExchangeRates() {
     fetchRates();
   }, []);
 
-  return { rates, timestamp, loading, error };
+  return { rates, timestamp, loading, error, isOffline, isUsingCachedData };
 }

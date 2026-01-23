@@ -17,7 +17,7 @@ type DisplayProps = {
 };
 
 const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
-  const { rates, timestamp, loading, error } = useExchangeRates();
+  const { rates, timestamp, loading, error, isOffline, isUsingCachedData } = useExchangeRates();
   const { convertAndFormatAmount } = useCurrencyConverter(rates, operation);
 
   const [fromCurrency, setFromCurrency] = useState<CurrencyOption>(() => {
@@ -99,7 +99,11 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
           </span>
         )}
       </div>
-      <div className={styles.timestamp}>{`Rates as of: ${formattedTimestamp}`}</div>
+      <div className={styles.timestamp}>
+        {isOffline && <span className={styles["status-indicator"]}>Offline</span>}
+        {!isOffline && isUsingCachedData && <span className={styles["status-indicator"]}>Cached</span>}
+        {`Rates as of: ${formattedTimestamp}`}
+      </div>
     </div>
   );
 };
