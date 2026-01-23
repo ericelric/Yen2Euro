@@ -1,5 +1,5 @@
 <div align="center" dir="auto">
-   <a href="https://yen2euro.vercel.app/" rel="nofollow"><img width="200" alt="logo" src="https://github.com/user-attachments/assets/f66f19d4-7fa3-4b79-a767-b2ce0c74866d"></a><br>
+   <a href="https://yen2euro.vercel.app/" rel="nofollow"><img width="150" alt="logo" src="https://github.com/user-attachments/assets/f66f19d4-7fa3-4b79-a767-b2ce0c74866d"></a><br>
 </div>
 
 <h1 align="center">¥en2€uro - Convert Currencies Seamlessly</h1>
@@ -75,7 +75,7 @@
 Once installed, the app works offline using cached exchange rates.
 
 ## **Screenshot**
-![pixel mockup yen](https://github.com/user-attachments/assets/538b5a19-66b4-416a-b014-a6d67d049665)
+![pixel mockup yen to euro](https://github.com/user-attachments/assets/2b1a73ff-2ac7-4d9d-8d89-bed47b1d2ea9)
 
 ---
 
