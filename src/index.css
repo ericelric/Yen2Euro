@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
 
 :root {
-  --background: #6a7c95;
   --grey-primary: #3a4452;
   --grey-secondary: #2e3742;
   --black: #111;
@@ -22,12 +21,6 @@
 body {
   background: var(--grey-primary);
   font-family: "Oxanium", sans-serif;
-}
-
-@media (min-width: 28rem) {
-  body {
-    background: var(--background);
-  }
 }
 
 #root {

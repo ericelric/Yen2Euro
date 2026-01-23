@@ -1,6 +1,6 @@
 .calculator__wrapper {
   background-color: var(--grey-primary);
-  border: 5px solid var(--grey-secondary);
+  border: 5px solid var(--grey-primary);
   border-radius: 1rem;
   container-type: inline-size;
   display: grid;
@@ -15,6 +15,7 @@
 @media (min-width: 28rem) {
   .calculator__wrapper {
     grid-template-rows: minmax(18rem, max-content) 1fr;
+    border-color: var(--grey-secondary);
   }
 }
 
