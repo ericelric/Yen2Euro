@@ -20,8 +20,14 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--grey-primary);
   font-family: "Oxanium", sans-serif;
+}
+
+@media (min-width: 28rem) {
+  body {
+    background: var(--background);
+  }
 }
 
 #root {
@@ -29,5 +35,4 @@ body {
   display: flex;
   height: 100svh;
   justify-content: center;
-  padding: 0.5rem;
 }
