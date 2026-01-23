@@ -75,7 +75,7 @@
 Once installed, the app works offline using cached exchange rates.
 
 ## **Screenshot**
-
+![pixel mockup yen](https://github.com/user-attachments/assets/538b5a19-66b4-416a-b014-a6d67d049665)
 
 ---
 
