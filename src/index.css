@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import "@fontsource-variable/oxanium";
 
 :root {
   --grey-primary: #3a4452;
@@ -20,7 +20,7 @@
 
 body {
   background: var(--grey-primary);
-  font-family: "Oxanium", sans-serif;
+  font-family: "Oxanium Variable", sans-serif;
 }
 
 #root {

@@ -73,6 +73,7 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
           value={fromCurrency}
           onChange={handleCurrencyChange(setFromCurrency, LOCAL_STORAGE_KEYS.FROM_CURRENCY)}
           styles={customSelectStyles}
+          aria-label="From currency"
         />
 
         <div className={styles["display__divider"]} />
@@ -82,6 +83,7 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
           value={toCurrency}
           onChange={handleCurrencyChange(setToCurrency, LOCAL_STORAGE_KEYS.TO_CURRENCY)}
           styles={customSelectStyles}
+          aria-label="To currency"
         />
 
         <button className={styles["display__swap-button"]} onClick={switchCurrencies}>

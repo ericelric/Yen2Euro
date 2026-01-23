@@ -113,7 +113,7 @@ const Calculator = () => {
   );
 
   return (
-    <div className={styles["calculator__wrapper"]}>
+    <main className={styles["calculator__wrapper"]}>
       <Display currentOperand={currentOperand} prevOperand={prevOperand} operation={operation} />
       <div className={styles["calculator__buttons"]}>
         <ControlButton
@@ -149,7 +149,7 @@ const Calculator = () => {
           twoCol={true}
         />
       </div>
-    </div>
+    </main>
   );
 };
 export default Calculator;

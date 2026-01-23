@@ -29,7 +29,7 @@ export const customSelectStyles: StylesConfig<CurrencyOption, false> = {
     color: "#fff",
     borderRadius: "0.5rem",
     boxShadow: "4px 5px 3px rgba(0, 0, 0, 0.5)",
-    fontFamily: "'Oxanium', sans-serif",
+    fontFamily: "'Oxanium Variable', sans-serif",
     padding: "0.125rem 0.5rem",
   }),
   option: (base, state) => ({

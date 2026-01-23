@@ -1,6 +1,6 @@
 .button {
   cursor: pointer;
-  font-family: "Oxanium", sans-serif;
+  font-family: "Oxanium Variable", sans-serif;
   font-size: clamp(1rem, 5cqi, 2rem);
   outline: none;
   color: var(--white);
