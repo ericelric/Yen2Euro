@@ -27,7 +27,7 @@ body {
 #root {
   align-items: center;
   display: flex;
-  height: 100dvh;
+  height: 100svh;
   justify-content: center;
   padding: 0.5rem;
 }
