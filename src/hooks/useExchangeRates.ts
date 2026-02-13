@@ -5,6 +5,7 @@ import type { ExchangeRates, ExchangeRatesResponse } from "../types/ExchangeRate
 import { LOCAL_STORAGE_KEYS } from "../constants/storageKeys";
 
 const SIX_HOURS = 6 * 60 * 60;
+const FETCH_TIMEOUT_MS = 5000;
 
 export function useExchangeRates() {
   const [rates, setRates] = useState<ExchangeRates>({});
@@ -62,7 +63,9 @@ export function useExchangeRates() {
         let response: AxiosResponse<ExchangeRatesResponse>;
 
         if (import.meta.env.DEV) {
-          response = await axios.get<ExchangeRatesResponse>("/mockData.json");
+          response = await axios.get<ExchangeRatesResponse>("/mockData.json", {
+            timeout: FETCH_TIMEOUT_MS,
+          });
         } else {
           response = await axios.get<ExchangeRatesResponse>(
             "https://openexchangerates.org/api/latest.json",
@@ -70,6 +73,7 @@ export function useExchangeRates() {
               params: {
                 app_id: import.meta.env.VITE_OPEN_EXCHANGE_RATES_KEY,
               },
+              timeout: FETCH_TIMEOUT_MS,
             }
           );
         }
