@@ -102,8 +102,9 @@ const Display = ({ currentOperand, prevOperand, operation }: DisplayProps) => {
         )}
       </div>
       <div className={styles.timestamp}>
-        {isOffline && <span className={styles["status-indicator"]}>Offline</span>}
-        {!isOffline && isUsingCachedData && <span className={styles["status-indicator"]}>Cached</span>}
+        <span>v{__APP_VERSION__}</span>
+        {isOffline && <span>Offline</span>}
+        {!isOffline && isUsingCachedData && <span>Cached</span>}
         {`Rates as of: ${formattedTimestamp}`}
       </div>
     </div>
